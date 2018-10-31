@@ -5,7 +5,8 @@ import {
   RECEIVE_ADDRESS,
   RECEIVE_CATEGORYS,
   RECEIVE_SHOPS,
-  RECEIVE_USERINFO
+  RECEIVE_USERINFO,
+  RESET_USER_INFO
 } from './mutation-types'
 
 export default {
@@ -13,7 +14,6 @@ export default {
     state.address = address
   },
 
-  // 然后就是这里 了 使用state就可以更新调用接口了
   [RECEIVE_CATEGORYS] (state, {categorys}) {
     state.categorys = categorys
   },
@@ -24,5 +24,9 @@ export default {
 
   [RECEIVE_USERINFO] (state, {userInfo}) {
     state.userInfo = userInfo
+  },
+
+  [RESET_USER_INFO] (state) {
+    state.userInfo = {}
   },
 }

@@ -2,7 +2,7 @@
   <section class="loginContainer">
     <div class="loginInner">
       <div class="login_header">
-        <h2 class="login_logo">硅谷外卖</h2>
+        <h2 class="login_logo">Demo外卖</h2>
         <div class="login_header_title">
           <a href="javascript:;" :class="{on: !loginWay}" @click="loginWay=false">短信登录</a>
           <a href="javascript:;" :class="{on: loginWay}" @click="loginWay=true">密码登录</a>
@@ -111,9 +111,6 @@ export default {
             this.intervalId = undefined;
           }
         }
-        // if(this.intervalId) {
-        //   this.showAlert(result.msg)
-        // }
       }
     },
 
@@ -173,7 +170,7 @@ export default {
       if (result.code === 0) {
         const user = result.data;
         // 将user保存到vuex的state中
-        this.$store.dispatch('recordUser', user)
+        this.$store.dispatch("recordUser", user);
         // 跳转路由（去个人中心界面）
         this.$router.replace("./profile");
       } else {
