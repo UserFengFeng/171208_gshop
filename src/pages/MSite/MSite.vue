@@ -1,12 +1,17 @@
 <template>
   <section class="msite">
     <header-top :title="address.name">
-      <span class="header_search" slot="left">
+      <router-link class="header_search" slot="left" to="/search">
         <i class="iconfont icon-sousuo"></i>
-      </span>
-      <span class="header_login" slot="right">
-        <span class="header_login_text">登录|注册</span>
-      </span>
+      </router-link>
+      <router-link class="header_login" slot="right" :to="userInfo._id ? '/userinfo' :'/login'">
+        <span class="header_login_text" v-if="!userInfo._id">
+          登录|注册
+        </span>
+        <span class="header_login_text" v-else>
+          <i class="iconfont icon-person"></i>
+        </span>
+      </router-link>
     </header-top>
     <!--首页导航-->
     <nav class="msite_nav">
@@ -24,7 +29,7 @@
         <!-- Add Pagination -->
         <div class="swiper-pagination"></div>
       </div>
-      <img src="./images/msite_back.svg" alt="back" v-else/>
+      <img src="./images/msite_back.svg" alt="back" v-else />
     </nav>
     <!--首页附近商家-->
     <div class="msite_shop_list">
@@ -46,8 +51,8 @@ import ShopList from "../../components/ShopList/ShopList.vue";
 
 export default {
   mounted() {
-    this.$store.dispatch("getCategorys");
-    this.$store.dispatch("getShops");
+    this.$store.dispatch('getCategorys');
+    this.$store.dispatch('getShops');
   },
 
   components: {
@@ -56,7 +61,7 @@ export default {
   },
 
   computed: {
-    ...mapState(["address", "categorys"]),
+    ...mapState(['address', 'userInfo', 'categorys']),
 
     /**
      * 根据categorys一维数组生成一个2维数组
@@ -95,7 +100,8 @@ export default {
         /*
         一旦完成界面更新就立即调用（此条语句要写在数据更新之后）
         创建一个Swiper实例对象，来实现轮播
-        */ 
+        */
+
         new Swiper(".swiper-container", {
           // 可以循环轮播
           loop: true,
