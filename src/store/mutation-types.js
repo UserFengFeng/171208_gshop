@@ -6,3 +6,7 @@ export const RECEIVE_CATEGORYS = 'receive_categorys' // 接收食品分类数组
 export const RECEIVE_SHOPS = 'receive_shops' // 接收商家数组
 export const RECEIVE_USERINFO = 'userInfo' // 接收用户信息
 export const RESET_USER_INFO = 'reset_user_info' // 重置用户信息
+
+export const RECEIVE_GOODS = 'receive_goods' // 商品列表
+export const RECEIVE_RATINGS = 'receive_ratings' // 商家评价列表
+export const RECEIVE_INFO = 'receive_info' // 商家信息

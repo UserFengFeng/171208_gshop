@@ -9,6 +9,8 @@ import
 {
   Button
 }from 'mint-ui'
+
+import './mock/mockServer' // 加载mockServer
 // 注册全局组件标签
 Vue.component(Button.name, Button) // <mt-button>
 const vm = new Vue({

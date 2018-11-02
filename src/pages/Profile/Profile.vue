@@ -102,7 +102,7 @@ import { MessageBox,Toast } from "mint-ui";
 import { mapState } from "vuex";
 export default {
   computed: {
-    ...mapState(["userInfo"])
+    ...mapState(['userInfo'])
   },
 
   components: {

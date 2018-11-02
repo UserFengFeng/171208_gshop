@@ -20,6 +20,12 @@ export const reqSendCode = (phone) => ajax(BASE_URL + '/sendcode', { phone })
 // 手机号验证码登录
 export const reqSmsLogin = (phone, code) => ajax(BASE_URL + '/login_sms', { phone, code }, 'POST')
 // 根据会话获取用户信息
-export const reqUserinfo = () => ajax(BASE_URL + '/userinfo')
+export const reqUserInfo = () => ajax(BASE_URL + '/userinfo')
 // 用户退出登录
 export const reqLogout = () => ajax(BASE_URL + '/logout')
+// 获取商家信息
+export const reqShopInfo = () => ajax('/info')
+// 获取商家评价
+export const reqShopRatings = () => ajax('/ratings')
+// 获取商家商品
+export const reqShopGoods = () => ajax('/goods')
