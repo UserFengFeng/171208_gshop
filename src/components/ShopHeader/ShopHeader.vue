@@ -139,7 +139,6 @@
 
 <style lang="stylus" rel="stylesheet/stylus" scoped>
   @import "../../common/stylus/mixins.styl"
-
   .shop-header
     height 100%
     position relative
